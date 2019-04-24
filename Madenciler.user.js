@@ -3,7 +3,7 @@
 // @namespace   2c7e63c68903f0a8b63d7bfdd749d871
 // @description    Madenciler is InfoCompte3 copy with special additions.
 // @vOGgame        6.5.2
-// @version        1.0.9
+// @version        1.0.10
 // @author         sencagri
 // @license 	   MIT
 // @grant		   GM_getValue
@@ -20,7 +20,7 @@
 // @exclude        *.ogame*gameforge.com/game/index.php?page=displayMessageNewPage*
 // ==/UserScript==
 
-var Version = '1.0.9';
+var Version = '1.0.10';
 //var numberUserscript = '133137';
 
 var start_time = (new Date()).getTime();
@@ -3383,7 +3383,7 @@ function InfoCompteScript()
 				var totNiv =0;
 			
 				code+= '['+center+'][u][size='+size2+']'+text.bbcode.rapport+' '+DATA.info.player+' uni '+numUni+'[/size] \n ';
-				code+= text.bbcode.genere+'[color=#'+options.couleur.CoulBBcode+'] '+date+' [/color] by [url=http://vulca.1s.fr/][color=#'+CoulBBcode+']InfoCompte[/color][/url] [color=#'+CoulBBcode+']v'+Version+'[/color][/u][/'+centerFin+']\n\n\n';
+				code+= text.bbcode.genere+'[color=#'+options.couleur.CoulBBcode+'] '+date+' [/color] by [url=http://vulca.1s.fr/][color=#'+CoulBBcode+']Madenciler [/color][/url] [color=#'+CoulBBcode+']v'+Version+'[/color][/u][/'+centerFin+']\n\n\n';
 
 				code+= ' [u][size='+size2+'][color=#'+options.couleur.CoulBBcode2+'] '+text.bbcode.empirePoint+' [/color][/size][/u]\n';
 				code+= '- '+text.BBcode_mine +' [color=#'+options.couleur.CoulBBcode+']'+addPoints(PointsMinesTotal)+' ( '+pourcent(PointsMinesTotal,PointsTotal)+' %)[/color]\n';
