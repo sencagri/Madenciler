@@ -12,8 +12,8 @@
 // @grant		   GM_getResourceURL
 // @grant		   GM_xmlhttpRequest
 
-// @updateURL https://openuserjs.org/install/sencagri/Madenciler.user.js
-// @downloadURL https://openuserjs.org/install/sencagri/Madenciler.user.js
+// @updateURL https://github.com/sencagri/Madenciler/raw/master/Madenciler.user.js
+// @downloadURL https://github.com/sencagri/Madenciler/raw/master/Madenciler.user.js
 
 // @include     	*.ogame*gameforge.com/game/index.php?page=*
 
