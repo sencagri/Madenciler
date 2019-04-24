@@ -13,7 +13,7 @@
 // @grant		   GM_xmlhttpRequest
 
 // @updateURL https://raw.githubusercontent.com/sencagri/Madenciler/Development/Madenciler.user.js
-// @downloadURL https://github.com/sencagri/Madenciler/raw/Development/Madenciler.user.js
+// @downloadURL https://raw.githubusercontent.com/sencagri/Madenciler/Development/Madenciler.user.js
 
 // @include     	*.ogame*gameforge.com/game/index.php?page=*
 
