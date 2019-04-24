@@ -3807,7 +3807,7 @@ function InfoCompteScript()
 				
 				exportMine += '\n';
 				
-				exportMine += '[size=8][i]Export with [url=https://openuserjs.org/scripts/sencagri/Madenciler]Madenciler'+Version+'[/url][/i][/size]\n';
+				exportMine += '[size=8][i]Bu eklentiyi kullanın [url=https://openuserjs.org/scripts/sencagri/Madenciler]Madenciler'+Version+'[/url][/i][/size]\n';
 				exportMine += '[size=8]OGameTR[/size]\n';
 				exportMine += '</textarea>';
 				
