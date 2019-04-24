@@ -3,7 +3,7 @@
 // @namespace   2c7e63c68903f0a8b63d7bfdd749d871
 // @description    Madenciler is InfoCompte3 copy with special additions.
 // @vOGgame        6.5.2
-// @version        1.0.7
+// @version        1.0.8
 // @author         sencagri
 // @license 	   MIT
 // @grant		   GM_getValue
@@ -20,7 +20,7 @@
 // @exclude        *.ogame*gameforge.com/game/index.php?page=displayMessageNewPage*
 // ==/UserScript==
 
-var Version = '1.0.7';
+var Version = '1.0.8';
 //var numberUserscript = '133137';
 
 var start_time = (new Date()).getTime();
