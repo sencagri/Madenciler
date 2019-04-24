@@ -1039,7 +1039,7 @@ function InfoCompteScript()
 				parheure : 'Saatte',
 				parjour : 'Günde',
 				parsem : 'Haftada',
-				parsemnt : '30 günde',
+				parsemnt : 'Ayda',
 				exportmine : 'Siz de bu eklentiyi kurmak istiyor iseniz'
 				},
 			options:
