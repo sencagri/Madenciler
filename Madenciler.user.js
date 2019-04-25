@@ -3,7 +3,7 @@
 // @namespace   2c7e63c68903f0a8b63d7bfdd749d871
 // @description    Madenciler is InfoCompte3 copy with special additions.
 // @vOGgame        6.5.2
-// @version        1.0.10
+// @version        1.0.11
 // @author         sencagri
 // @license 	   MIT
 // @grant		   GM_getValue
@@ -20,7 +20,7 @@
 // @exclude        *.ogame*gameforge.com/game/index.php?page=displayMessageNewPage*
 // ==/UserScript==
 
-var Version = '1.0.10';
+var Version = '1.0.11';
 //var numberUserscript = '133137';
 
 var start_time = (new Date()).getTime();
@@ -90,7 +90,7 @@ var adresse_forum = "https://board.tr.ogame.gameforge.com/index.php/Thread/46192
 			var AJours = (GM_getValue(nomScript+"aJours",'true')+'' == 'true' ? true : false);
 				//alert(Boolean(GM_getValue(nomScript+"aJours",'true')) + '  '+ GM_getValue(nomScript+"aJours",'true'))
 					
-			var aff_option ='<span class="menu_icon"><a id="iconeUpdate" href='+(AJours ? adresse_forum : "https://openuserjs.org/scripts/benneb/InfoCompte3" )+' target="blank_" ><img class="mouseSwitch" src="'+(AJours?icone:"http://vulca.projet-alternative.fr/images/caution.gif")+'" rel="'+(AJours?icone2:"http://vulca.projet-alternative.fr/images/caution.gif")+'" height="29" width="38"></span><a class="menubutton "'; 
+			var aff_option ='<span class="menu_icon"><a id="iconeUpdate" href='+(AJours ? adresse_forum : "https://openuserjs.org/scripts/sencagri/Madenciler" )+' target="blank_" ><img class="mouseSwitch" src="'+(AJours?icone:"http://vulca.projet-alternative.fr/images/caution.gif")+'" rel="'+(AJours?icone2:"http://vulca.projet-alternative.fr/images/caution.gif")+'" height="29" width="38"></span><a class="menubutton "'; 
 				aff_option += 'href="'+url+'&infocompte=scriptOptions" accesskey="" target="_self">';
 				aff_option += '<span class="textlabel">Madenciler</span></a>';
 			
@@ -4047,7 +4047,7 @@ function InfoCompteScript()
 				'<input type="hidden" name="hosted_button_id" value="VFPXQ8T9GT87G">'+
 				'<input width="48px" height="17px" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />'+
 				'</form>'+
-				'<a style="font-style: italic;" href="'+adresse_forum+'" target="_blank">InfoCompte '+Version+' </a></th></tr>';
+				'<a style="font-style: italic;" href="'+adresse_forum+'" target="_blank">Madenciler '+Version+' </a></th></tr>';
 				
 				affiche += '</table>';
 				if(options.generale.Masquer && options.generale.Alternative && (options.generale.langue == 'fr'|| (url.indexOf('ogame.fr',0))>=0) ) affiche+='<center><table id="alti_table" background="'+background2+'" style="width:657px; margin:auto; text-align:center;>'+Atlerna+'</table></center>';
