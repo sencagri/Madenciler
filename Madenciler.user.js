@@ -34,7 +34,7 @@ var Safari = navigator.userAgent.indexOf("Safari") > -1;
 var Tamper = false;
 var DATA = new Array();
 
-var adresse_forum = "https://board.tr.ogame.gameforge.com/index.php/Thread/461924-Kademecilik-ve-%C4%B0ncelikleri/?pageNo=1"
+var adresse_forum = "https://board.tr.ogame.gameforge.com/index.php/Thread/461924-Kademecilik-ve-%C4%B0ncelikleri"
 
 	if (Chrome)
 	{
