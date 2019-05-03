@@ -3,7 +3,7 @@
 // @namespace   2c7e63c68903f0a8b63d7bfdd749d871
 // @description    Madenciler is InfoCompte3 copy with special additions.
 // @vOGgame        6.5.2
-// @version        1.0.13
+// @version        1.0.14
 // @author         sencagri
 // @license 	   MIT
 // @grant		   GM_getValue
@@ -20,7 +20,7 @@
 // @exclude        *.ogame*gameforge.com/game/index.php?page=displayMessageNewPage*
 // ==/UserScript==
 
-var Version = '1.0.13';
+var Version = '1.0.14';
 //var numberUserscript = '133137';
 
 var start_time = (new Date()).getTime();
@@ -2491,6 +2491,11 @@ function InfoCompteScript() {
 						//var listeMinepact='';
 
 						for (var i = 0; i < nbPlanet; i++) {
+
+							// load booster info from chrome storage
+							let coordPM = document.getElementsByClassName('planet-koords')[0].innerHTML;
+							boost = GM_getValue(nomScript + "boost" + coordPM + serveur, '0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;').split(';');
+
 							DATA.planet[i] =
 								{
 									moon: BatSta[i].split('|')[10],
@@ -2573,9 +2578,6 @@ function InfoCompteScript() {
 								if (isNaN(parseInt(DATA.planet[i].fleet[nom_flotte[n]]))) DATA.planet[i].fleet[nom_flotte[n]] = '00';
 							}
 
-							// load booster info from chrome storage
-							let coordPM = document.getElementsByClassName('planet-koords')[0].innerHTML;
-							boost = GM_getValue(nomScript + "boost" + coordPM + serveur, '0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;').split(';');
 
 
 							if (!Lune[i]) {
@@ -2626,13 +2628,14 @@ function InfoCompteScript() {
 									if (buffBar.innerHTML.indexOf("5560a1580a0330e8aadf05cb5bfe6bc3200406e2") != -1) coeffbosterdeut = 30;
 
 
-									console.log(f + 1 + " gezegeni güçlendiricisi before" + boost[f]);
-									boost[f] = coeffbostermetal + '|' + coeffbostercristal + '|' + coeffbosterdeut;
+									boost[i] = coeffbostermetal + '|' + coeffbostercristal + '|' + coeffbosterdeut;
 
-									console.log(f + 1 + " gezegeni güçlendiricisi update" + boost[f]);
+									DATA.planet[i].booster.met = coeffbostermetal;
+									DATA.planet[i].booster.cri = coeffbostercristal;
+									DATA.planet[i].booster.det = coeffbosterdeut;
 
 									GM_setValue(nomScript + "boost" + coordPM + serveur, boost.join(';'));
-									console.log(f + 1 + " gezegeni güçlendiricisi after " + boost[f]);
+									console.log(i + " gezegeni güçlendiricisi after " + boost[f]);
 									console.log("\n\n");
 
 								}
@@ -3406,18 +3409,25 @@ function InfoCompteScript() {
 							var pseudo = GM_getValue(nomScript + 'Pseudo' + serveur, "pseudo#coordPM#CoordPM").split('#')[0];
 							exportMine += "[u]" + text.exportm.niveau + " [b][color=#b9ffa3]" + pseudo + "[/color][/b] ( " + serveur_split[0] + " ) " + text.exportm.le + " " + dateAjd.toLocaleString() + " :[/u]\n\n";
 							let coordPM = document.getElementsByClassName('planet-koords')[0].innerHTML;
-							boost = GM_getValue(nomScript + "boost" + coordPM + serveur, '0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;').split(';');
+							var boost = GM_getValue(nomScript + "boost" + coordPM + serveur, '0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;0|0|0;').split(';');
 
 							function test(valeur) {
 								return parseInt(valeur) < 10 ? "0" + valeur : valeur;
 							}
-
+							let p = 0;
 							for (i = 0; i < DATA.planet.length; i++) {
+								
 								if (DATA.planet[i].moon == 'false') {
-									//console.log(boost);
-									var boostermInfo = boost[i / 2].split('|')[0];
-									var boostercInfo = boost[i / 2].split('|')[1];
-									var boosterdInfo = boost[i / 2].split('|')[2];
+									if (boost != null) {
+										//console.log("Boost bilgisi : " + boost[i]);
+										var dataPlanet = DATA.planet[i].booster;
+										console.log(i + " DATA PLANET : Metal : " +  dataPlanet.met + " Kristal : " +  dataPlanet.cri + " Deu : " +  dataPlanet.det);
+										console.log(i + " BOOSTER     : Metal : " +  boost[i].split('|')[0] + " Kristal : " +  boost[i].split('|')[1] + " Deu : " +  boost[i].split('|')[2]);
+									}
+
+									var boostermInfo = boost[p].split('|')[0];
+									var boostercInfo = boost[p].split('|')[1];
+									var boosterdInfo = boost[p].split('|')[2];
 
 
 									var mm = parseInt(DATA.planet[i].building[nom_bat[0]]);
@@ -3465,6 +3475,7 @@ function InfoCompteScript() {
 									point_c_total += Math.floor((72 * (1 - Math.pow(1.6, mc) / (-(1.6 - 1)))) / 1000);
 									point_d_total += Math.floor((300 * (1 - Math.pow(1.5, md) / (-(1.5 - 1)))) / 1000);
 								}
+								p++;
 							}
 
 							point_mine = point_m_total + point_c_total + point_d_total;
