@@ -3,7 +3,7 @@
 // @namespace   2c7e63c68903f0a8b63d7bfdd749d871
 // @description    Madenciler is InfoCompte3 copy with special additions.
 // @vOGgame        6.5.2
-// @version        1.0.14
+// @version        1.0.15
 // @author         sencagri
 // @license 	   MIT
 // @grant		   GM_getValue
@@ -20,7 +20,7 @@
 // @exclude        *.ogame*gameforge.com/game/index.php?page=displayMessageNewPage*
 // ==/UserScript==
 
-var Version = '1.0.14';
+var Version = '1.0.15';
 //var numberUserscript = '133137';
 
 var start_time = (new Date()).getTime();
@@ -3414,7 +3414,6 @@ function InfoCompteScript() {
 							function test(valeur) {
 								return parseInt(valeur) < 10 ? "0" + valeur : valeur;
 							}
-							let p = 0;
 							for (i = 0; i < DATA.planet.length; i++) {
 								
 								if (DATA.planet[i].moon == 'false') {
@@ -3425,9 +3424,9 @@ function InfoCompteScript() {
 										console.log(i + " BOOSTER     : Metal : " +  boost[i].split('|')[0] + " Kristal : " +  boost[i].split('|')[1] + " Deu : " +  boost[i].split('|')[2]);
 									}
 
-									var boostermInfo = boost[p].split('|')[0];
-									var boostercInfo = boost[p].split('|')[1];
-									var boosterdInfo = boost[p].split('|')[2];
+									var boostermInfo = boost[i].split('|')[0];
+									var boostercInfo = boost[i].split('|')[1];
+									var boosterdInfo = boost[i].split('|')[2];
 
 
 									var mm = parseInt(DATA.planet[i].building[nom_bat[0]]);
@@ -3475,7 +3474,6 @@ function InfoCompteScript() {
 									point_c_total += Math.floor((72 * (1 - Math.pow(1.6, mc) / (-(1.6 - 1)))) / 1000);
 									point_d_total += Math.floor((300 * (1 - Math.pow(1.5, md) / (-(1.5 - 1)))) / 1000);
 								}
-								p++;
 							}
 
 							point_mine = point_m_total + point_c_total + point_d_total;
