@@ -3,7 +3,7 @@
 // @namespace   2c7e63c68903f0a8b63d7bfdd749d871
 // @description    Madenciler is InfoCompte3 copy with special additions.
 // @vOGgame        6.5.2
-// @version        1.0.12
+// @version        1.0.13
 // @author         sencagri
 // @license 	   MIT
 // @grant		   GM_getValue
@@ -20,7 +20,7 @@
 // @exclude        *.ogame*gameforge.com/game/index.php?page=displayMessageNewPage*
 // ==/UserScript==
 
-var Version = '1.0.12';
+var Version = '1.0.13';
 //var numberUserscript = '133137';
 
 var start_time = (new Date()).getTime();
@@ -2637,7 +2637,7 @@ function InfoCompteScript() {
 
 								}
 
-								DATA.planet[i].resource.prod.d = prodDeut(DATA.planet[i].building['mdet'], speedUni, Techno[4], tempM, Geolog, boost[i].split('|')[2]);
+								DATA.planet[i].resource.prod.d = prodDeut(DATA.planet[i].building['mdet'], speedUni, Techno[4], tempM, Geolog, boost[f].split('|')[2]);
 								//console.log("2 "+Techno[4]);
 
 								f++;
